@@ -4,6 +4,7 @@ import os
 import cv2
 
 def extractFrames(vid):
+    tail = os.path.split(vid)[1]
     count = 0
     vidcap = cv2.VideoCapture(vid)
     success,frame = vidcap.read()
@@ -11,7 +12,7 @@ def extractFrames(vid):
     while success:
       success,frame = vidcap.read()
       print ('Read a new frame: ', success)
-      cv2.imwrite(os.path.normpath("/pfs/out" + "/frame%d.jpg" % count), frame)
+      cv2.imwrite(os.path.normpath("/pfs/out" + os.path.splitext(tail)[0]+"frame%d.jpg" % count), frame)
       count = count + 1
 
 for dirpath, dirs, files in os.walk("/pfs/videos"):

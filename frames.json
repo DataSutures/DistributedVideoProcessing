@@ -4,7 +4,7 @@
     "name": "frames"
   },
   "transform": {
-    "cmd": [ "python3", "/ParseVideoFrames.py" ],
+    "cmd": [ "python", "/ParseVideosFrames.py" ],
     "image": "valian/docker-python-opencv-ffmpeg"
   },
   "input": {
