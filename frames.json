@@ -1,0 +1,16 @@
+# frames.json
+{
+  "pipeline": {
+    "name": "frames"
+  },
+  "transform": {
+    "cmd": [ "python3", "/ParseVideoFrames.py" ],
+    "image": "valian/docker-python-opencv-ffmpeg"
+  },
+  "input": {
+    "atom": {
+      "repo": "videos",
+      "glob": "/*"
+    }
+  }
+}
