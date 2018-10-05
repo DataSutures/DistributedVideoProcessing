@@ -10,7 +10,7 @@
   },
   "transform": {
     "cmd": [ "python3", "/ParseVideoFrames.py" ],
-    "image": "datasutures/opencv-python-frame-extration:v2"
+    "image": "datasutures/opencv-python-frame-extration:v3"
   },
   "resource_requests": {
     "memory": "150M",
