@@ -9,7 +9,7 @@
     }
   },
   "transform": {
-    "cmd": [ "python", "/ParseVideoFrames.py" ],
+    "cmd": [ "python3", "/ParseVideoFrames.py" ],
     "image": "datasutures/opencv-python-frame-extration:v2"
   },
   "resource_requests": {
