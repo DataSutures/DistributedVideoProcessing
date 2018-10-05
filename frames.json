@@ -11,5 +11,9 @@
   "transform": {
     "cmd": [ "python", "/ParseVideosFrames.py" ],
     "image": "datasutures/opencv-python-frame-extration"
+  },
+  "resource_requests": {
+    "memory": "150M",
+    "cpu": 0.5
   }
 }
