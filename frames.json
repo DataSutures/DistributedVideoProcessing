@@ -10,6 +10,6 @@
   },
   "transform": {
     "cmd": [ "python", "/ParseVideosFrames.py" ],
-    "image": "valian/docker-python-opencv-ffmpeg"
+    "image": "opencv-python-frame-extration"
   }
 }
