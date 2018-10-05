@@ -88,11 +88,8 @@ RUN apt-get -y update && \
     apt-get clean && \
     rm -rf /opencv /opencv_contrib /var/lib/apt/lists/*
 
-# Install matplotlib
-RUN sudo pip3 install matplotlib
-
 # Add my script
-ADD frames.py /frames.py
+ADD ParseVideosFrames.py /ParseVideosFrames.py
 
 # Define default command.
 CMD ["python3 --version"]
