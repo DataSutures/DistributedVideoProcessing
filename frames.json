@@ -10,6 +10,6 @@
   },
   "transform": {
     "cmd": [ "python", "/ParseVideosFrames.py" ],
-    "image": "opencv-python-frame-extration"
+    "image": "datasutures/opencv-python-frame-extration"
   }
 }
