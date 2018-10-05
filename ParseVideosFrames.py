@@ -18,4 +18,4 @@ def extractFrames(vid):
 	fh.write(“Put the text you want to add here”) 
 for dirpath, dirs, files in os.walk("/pfs/videos"):
 	for file in files:
-    extractFrames(os.path.join(dirpath,file))
+    	extractFrames(os.path.join(dirpath,file))
