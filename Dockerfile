@@ -1,7 +1,7 @@
 # https://www.learnopencv.com/install-opencv3-on-ubuntu/
 
 FROM ubuntu:16.04
-LABEL maintainer "jakub.skalecki@gmail.com"
+LABEL maintainer "kimberlyvsmith@gmail.com"
 ENV OPENCV_VERSION 3.4.2
 
 # Install all dependencies for OpenCV
@@ -89,7 +89,7 @@ RUN apt-get -y update && \
     rm -rf /opencv /opencv_contrib /var/lib/apt/lists/*
 
 # Add my script
-ADD ParseVideosFrames.py /ParseVideosFrames.py
+ADD ParseVideoFrames.py /ParseVideoFrames.py
 
 # Define default command.
 CMD ["python3 --version"]
