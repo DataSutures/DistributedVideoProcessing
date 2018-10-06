@@ -33,7 +33,8 @@ RUN apt-get -y update && \
     wget https://bootstrap.pypa.io/get-pip.py && \
     python3 get-pip.py && \
     rm get-pip.py && \
-    pip3 install numpy \
+    pip3 install numpy && \
+    pip3 install matplotlib \
     && \
 
 # Install OpenCV
@@ -68,7 +69,6 @@ RUN apt-get -y update && \
     make install && \
     ldconfig \
     && \
-
 # Clean
     apt-get -y remove \
         python3-dev \
