@@ -90,6 +90,7 @@ RUN apt-get -y update && \
 
 # Add my script
 ADD ParseVideoFrames.py /ParseVideoFrames.py
+ADD edges.py /edges.py
 
 # Define default command.
 CMD ["python3 --version"]
