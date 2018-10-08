@@ -1,6 +1,8 @@
 import os
 import sys
 import cv2
+import numpy as np
+from matplotlib import pyplot as plt
 
 def extractFrames(vid):
     count = 0
@@ -9,7 +11,7 @@ def extractFrames(vid):
     while success:
         success, frame = vidcap.read()
         sys.stdout.write('Read a new frame: %s' % success)
-        cv2.imwrite(os.path.join('/pfs/out', '/'+str(count)+'.png'), frame)
+        cv2.imwrite("pfs/out" + "/%#05d.jpg" % (count+1), frame)
         count = count + 1
 
 
