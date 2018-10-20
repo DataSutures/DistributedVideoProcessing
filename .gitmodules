@@ -1,0 +1,3 @@
+[submodule "FrameColorizer/colorization"]
+	path = FrameColorizer/colorization
+	url = https://github.com/richzhang/colorization.git
