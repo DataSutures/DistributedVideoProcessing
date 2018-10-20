@@ -1,0 +1,15 @@
+{
+  "pipeline": {
+    "name": "colorize"
+  },
+  "input": {
+    "atom": {
+      "glob": "/*",
+      "repo": "frames"
+    }
+  },
+  "transform": {
+    "cmd": [ "python", "./colorize.py", "-img_in", "/pfs/in", "-img_out", "/pfs/out", "--prototxt", "/workspace/colorization/models/colorization_deploy_v2.prototxt", "--caffemodel", "/workspace/colorization/models/colorization_release_v2.caffemodel"  ],
+    "image": "datasutures/caffe_colorization:v3"
+  }
+}
