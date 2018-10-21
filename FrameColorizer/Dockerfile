@@ -10,10 +10,9 @@ ADD colorize.py colorize.py
 RUN apt-get update \
   && apt-get install -y python-tk \
   && apt-get install -y vim \
-  && git clone -b master --single-branch https://github.com/richzhang/colorization.git \
+  && git clone https://github.com/richzhang/colorization.git \
   && mv colorize.py ./colorization/colorization/colorize.py \
   && cd ./colorization \
   && ./models/fetch_release_models.sh
   
 WORKDIR /workspace/colorization/colorization
-

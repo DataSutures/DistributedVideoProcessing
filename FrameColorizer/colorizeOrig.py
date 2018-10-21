@@ -8,15 +8,19 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='iColor: deep interactive colorization')
+    parser.add_argument('-img_in',dest='img_in',help='grayscale image to read in', type=str)
+    parser.add_argument('-img_out',dest='img_out',help='colorized image to save off', type=str)
     parser.add_argument('--gpu', dest='gpu', help='gpu id', type=int, default=0)
     parser.add_argument('--prototxt',dest='prototxt',help='prototxt filepath', type=str, default='./models/colorization_deploy_v2.prototxt')
     parser.add_argument('--caffemodel',dest='caffemodel',help='caffemodel filepath', type=str, default='./models/colorization_release_v2.caffemodel')
 
     args = parser.parse_args()
     return args
-    
-def colorize(args, image, filename):
-    #caffe.set_mode_gpu()
+
+if __name__ == '__main__':
+	args = parse_args()
+
+	#caffe.set_mode_gpu()
 	#caffe.set_device(args.gpu)
 
 	# Select desired model
@@ -30,7 +34,7 @@ def colorize(args, image, filename):
 	# print 'Annealed-Mean Parameters populated'
 
 	# load the original image
-	img_rgb = caffe.io.load_image(image)
+	img_rgb = caffe.io.load_image(args.img_in)
 
 	img_lab = color.rgb2lab(img_rgb) # convert image to lab color space
 	img_l = img_lab[:,:,0] # pull out L channel
@@ -54,11 +58,4 @@ def colorize(args, image, filename):
 	img_lab_out = np.concatenate((img_l[:,:,np.newaxis],ab_dec_us),axis=2) # concatenate with original image L
 	img_rgb_out = (255*np.clip(color.lab2rgb(img_lab_out),0,1)).astype('uint8') # convert back to rgb
 
-	plt.imsave("../../../pfs/out/" + filename, img_rgb_out)
-
-
-args = parse_args()
-
-for dirpath, dirs, files in os.walk('../../../pfs/gray'):
-    for file in files:
-        colorize(args, os.path.join(dirpath, file), file)
+	plt.imsave(args.img_out, img_rgb_out)
