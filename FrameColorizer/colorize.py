@@ -59,6 +59,6 @@ def colorize(args, image, filename):
 
 args = parse_args()
 
-for dirpath, dirs, files in os.walk('../../../pfs/gray'):
+for dirpath, dirs, files in os.walk('../../../pfs/frames'):
     for file in files:
         colorize(args, os.path.join(dirpath, file), file)

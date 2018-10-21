@@ -4,15 +4,15 @@
   },
   "transform": {
     "cmd": [ "python", "./colorize.py", "--prototxt", "../models/colorization_deploy_v2.prototxt", "--caffemodel", "../models/colorization_release_v2.caffemodel"  ],
-    "image": "datasutures/caffe_colorization:v4"
+    "image": "datasutures/caffe_colorization:v5"
   },
   "parallelism_spec": {
     "constant": 4
-    },
-    "input": {
+  },
+  "input": {
     "atom": {
       "glob": "/*",
-      "repo": "gray"
+      "repo": "frames"
     }
   }
 }
