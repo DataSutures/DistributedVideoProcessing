@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in $(pachctl list-file frames master);
+do 
+	if [$(($i%2 == 0))]
+		then $(pachctl delete-file frames a6c1d06c999744699f89390c89e611c5 *$i.jpg)
+	fi
+done
