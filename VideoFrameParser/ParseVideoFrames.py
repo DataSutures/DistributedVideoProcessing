@@ -17,4 +17,5 @@ def extractFrames(vid):
 
 for dirpath, dirs, files in os.walk('/pfs/videos'):
     for file in files:
-        extractFrames(os.path.join(dirpath, file))
+        if os.stat(os.path.join(dirpath, file)).st_size > 0:
+            extractFrames(os.path.join(dirpath, file))

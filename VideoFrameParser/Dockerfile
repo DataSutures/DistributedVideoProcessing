@@ -88,9 +88,9 @@ RUN apt-get -y update && \
     apt-get clean && \
     rm -rf /opencv /opencv_contrib /var/lib/apt/lists/*
 
-# Add my script
-ADD ParseVideoFrames.py /ParseVideoFrames.py
-ADD edges.py /edges.py
+# Add my scripts
+ADD parseVideoFrames.py /parseVideoFrames.py
+ADD framesToVideo.py /framesToVideo.py
 
 # Define default command.
 CMD ["python3 --version"]

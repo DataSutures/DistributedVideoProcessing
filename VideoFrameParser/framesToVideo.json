@@ -1,0 +1,24 @@
+{
+  "pipeline": {
+    "name": "videoWriter"
+  },
+  "transform": {
+    "cmd": [ "python3", "-u","./framesToVideo.py"],
+    "image": "datasutures/opencv-python-video-editing:v16",
+    "image_pull_secrets": [ "myregistrykey" ]
+   },
+  "input": {
+    "atom": {
+      "glob": "/",
+      "repo": "colorize"
+    }
+  },
+  "resource_requests": {
+   "memory": "1.5G",
+   "cpu": 0.5
+  },
+  "resource_limits": {
+    "memory": "2G",
+    "cpu": 0.5
+  }
+}

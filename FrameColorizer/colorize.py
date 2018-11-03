@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import sys
 import skimage.color as color
 import matplotlib.pyplot as plt
 import scipy.ndimage.interpolation as sni
@@ -31,7 +32,6 @@ def colorize(args, image, filename):
 
 	# load the original image
 	img_rgb = caffe.io.load_image(image)
-
 	img_lab = color.rgb2lab(img_rgb) # convert image to lab color space
 	img_l = img_lab[:,:,0] # pull out L channel
 	(H_orig,W_orig) = img_rgb.shape[:2] # original image size
@@ -61,4 +61,5 @@ args = parse_args()
 
 for dirpath, dirs, files in os.walk('../../../pfs/frames'):
     for file in files:
-        colorize(args, os.path.join(dirpath, file), file)
+        if os.stat(os.path.join(dirpath, file)).st_size > 0:
+            colorize(args, os.path.join(dirpath, file), file)

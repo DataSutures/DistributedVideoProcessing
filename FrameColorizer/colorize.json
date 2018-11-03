@@ -4,7 +4,7 @@
   },
   "transform": {
     "cmd": [ "python", "./colorize.py", "--prototxt", "../models/colorization_deploy_v2.prototxt", "--caffemodel", "../models/colorization_release_v2.caffemodel"  ],
-    "image": "datasutures/caffe_colorization:v5",
+    "image": "datasutures/caffe_colorization:v9",
     "image_pull_secrets": [ "myregistrykey" ]
    },
   "input": {
@@ -12,9 +12,6 @@
       "glob": "/*",
       "repo": "frames"
     }
-  },
-  "parallelism_spec": {
-    "constant": 2
   },
   "resource_requests": {
    "memory": "1.5G",

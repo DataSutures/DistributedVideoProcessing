@@ -9,7 +9,8 @@
     }
   },
   "transform": {
-    "cmd": [ "python3","-u", "/ParseVideoFrames.py" ],
-    "image": "datasutures/opencv-python-frame-extration:v3"
+    "cmd": [ "python3","-u", "/parseVideoFrames.py" ],
+    "image": "datasutures/opencv-python-video-editing:v16",
+    "image_pull_secrets": [ "myregistrykey" ]
   }
 }
