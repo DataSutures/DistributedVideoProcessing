@@ -33,12 +33,12 @@ writer = cv2.VideoWriter(outPath+filename+'.mp4', fourcc, 20.0, (width, height))
 
 
 # Read and write images to video
-for dirpath, dirs, images in os.walk(inPath):
-    for image in images:
-        image_path = os.path.join(dirpath, image)
-        if os.stat(image_path).st_size > 0:
-            frame = cv2.imread(image_path)
-            writer.write(frame)
+for image in sorted(os.listdir(inPath)):
+    image_path = os.path.join(inPath, image)
+    if os.stat(image_path).st_size > 0:
+        frame = cv2.imread(image_path)
+        writer.write(frame)
+        
 # Release everything if job is finished
 writer.release()
 cv2.destroyAllWindows()

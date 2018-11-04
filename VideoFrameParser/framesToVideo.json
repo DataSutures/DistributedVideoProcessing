@@ -4,7 +4,7 @@
   },
   "transform": {
     "cmd": [ "python3", "-u","./framesToVideo.py"],
-    "image": "datasutures/opencv-python-video-editing:v16",
+    "image": "datasutures/opencv-python-video-editing:v17",
     "image_pull_secrets": [ "myregistrykey" ]
    },
   "input": {
