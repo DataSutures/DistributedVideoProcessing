@@ -1,5 +1,5 @@
 #!/bin/bash
-/Users/kimberlysmith/Documents/SeniorProject/FrameColorizer
+cd /Users/kimberlysmith/Documents/SeniorProject/FrameColorizer
 rm -r frames
 mkdir frames
 pachctl list-file frames master > frames.txt
