@@ -5,7 +5,7 @@ cat frames1.txt | sed '/^NAME/d' > frames2.txt
 lines=$(cat frames2.txt)
 for line in $lines;
 do 
-    pachctl get-file frames master $line --output ./frames/american-protesters-cheering/BW/$line
+    pachctl get-file frames master $line --output ./frames/douglas-macarthur-giving-speech/BW/$line
 done
 ls ./frames
 rm frames.txt

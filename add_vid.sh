@@ -1,2 +1,2 @@
 cd vids
-pachctl put-file videos master american-protesters-cheering-d.mp4 -f 044604626-american-protesters-cheering-d.mp4
+pachctl put-file videos master douglas-macarthur-giving-speec.mp4 -f 043330473-douglas-macarthur-giving-speec.mp4

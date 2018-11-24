@@ -5,7 +5,7 @@ cat frames1.txt | sed '/^NAME/d' > frames2.txt
 lines=$(cat frames2.txt)
 for line in $lines;
 do 
-    pachctl get-file colorize master $line --output ./frames/american-protesters-cheering/RGB/$line
+    pachctl get-file colorize master $line --output ./frames/douglas-macarthur-giving-speech/RGB/$line
 done
 ls ./frames
 rm frames.txt
